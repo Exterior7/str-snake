@@ -52,6 +52,26 @@ export default class Game extends BaseGame {
     return pick < chance ? true : false;
   };
 
+  /**
+     * @returns {void}
+     * A metódus feladatai:
+     * 1. keresd meg a DOM -ban az összes .vertical-grid és .horizontal-grid 
+     * elemet
+     * 2. mentsd el őket egy grids nevű változóba
+     * 3. járd be a tömböt, és minden elemére hívd meg a Utils.removeNode 
+     * metódust, hogy eltávolítsd őket az oldalról
+     * 4. a this.gridVisible értékét állítsd false -ra
+     */
+  removeGrid(): void {
+    const verticalGrid = Array.from(document.querySelectorAll('.vertical-grid'));
+    const horizontalGrid = Array.from(document.querySelectorAll('.horizontal-grid'));
+    const grids = [...verticalGrid, ...horizontalGrid];
+    for (let i = 0; i < grids.length; i += 1) {
+      Utils.removeNode(i);
+    }
+    this.gridVisible = false;
+  };
+
   get highScore(): number {
     return parseInt(localStorage.getItem('high-score') || '0', 10) || 0;
   }
