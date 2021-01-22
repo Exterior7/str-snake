@@ -32,9 +32,16 @@ A feladatokat négy fájlban találjátok:
 
 ## Extra feladatok
 - Oldjátok meg, hogy a piros alma felvétele csak 1 pontot érjen.
+  // Game.ts 219 this.updateScore(type === 'food' ? 10 : 50); => this.updateScore(type === 'food' ? 1 : 50);
 - A zöld alma felvételénél vonjon le a játék 2 pontot.
+  // Game.ts 219 this.updateScore(type === 'food' ? 10 : 50); => this.updateScore(type === 'food' ? 1 : -2);
 - A kígyó ne tudjon jobbra fordulni.
+  // Tipp: Ha kivesszük a constants.ts -ben a 6-os sort?
 - Ha 20 pontot elért a játékos nullázódjanak a pontjai.
+  // Tipp: Ha beteszünk a Game.ts 284-es sorába egy if-et?
+  // if (this.score == 20) {
+  //  this.score = 0
+  // }
 
 ## Csapatmunka Javaslatok
 - Mutatkozzatok be röviden egymásnak, mielőtt kezditek a munkát.
