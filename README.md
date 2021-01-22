@@ -23,10 +23,10 @@ bele__ a másiknak kiosztott fájlba, így nem fog conflict létrejönni.
 
 ## Feladatok
 A feladatokat négy fájlban találjátok:
-- `src/Utils.ts`
-- `src/Piece.ts`
-- `src/Level.ts`
-- `src/Game.ts`
+- `src/Utils.ts` - Két feladat, egyet megoldottunk a konzultáción. - Lipták Gyuri
+- `src/Piece.ts` - Négy feladat. - Bonyai Péter
+- `src/Level.ts` - Hat feladat. - Győrffy Péter.
+- `src/Game.ts` - 2 feladat, plusz BaseGame fájl. - Szöllősi László.
 
 > A feladatok kommentekkel vannak jelölve, amelyek így kezdődnek: FELADAT!
 
