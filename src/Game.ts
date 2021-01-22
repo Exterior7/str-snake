@@ -40,6 +40,18 @@ export default class Game extends BaseGame {
     return this.levels[index];
   };
 
+  /**
+     * @returns {boolean}
+     * 1. hozz létre egy chance neű változót 5 értékkel
+     * 2. hozz létre egy pick nevű változót, értéke random szám szorozva 100 -al
+     * 3. térj vissza true értékkel, ha a pick kisebb mint a chance
+     */
+  mayIHaveGoldenApple(): boolean {
+    let chance = 5;
+    let pick = Math.floor((Math.random() * 100) + 1) * 100;
+    return pick < chance ? true : false;
+  };
+
   get highScore(): number {
     return parseInt(localStorage.getItem('high-score') || '0', 10) || 0;
   }
