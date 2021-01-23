@@ -35,13 +35,22 @@ A feladatokat négy fájlban találjátok:
   // Game.ts 219 this.updateScore(type === 'food' ? 10 : 50); => this.updateScore(type === 'food' ? 1 : 50);
 - A zöld alma felvételénél vonjon le a játék 2 pontot.
   // Game.ts 219 this.updateScore(type === 'food' ? 10 : 50); => this.updateScore(type === 'food' ? 1 : -2);
+ 
+  Ez így tökéletes, erre jutottam én is, tesztelve is lett - BP
+
 - A kígyó ne tudjon jobbra fordulni.
   // Tipp: Ha kivesszük a constants.ts -ben a 6-os sort?
+
+  Az a legegyszerűbb, ha átírjuk a constants.ts-ben egy nemlétező bill. kódra a keys.RIGHT-ot, pl. 39 helyett 139, már jó lesz (mert nem egyszerűen fog reagálni a játék a jobb nyílra, és nem kell bolygatni a kódot). Kivenni nem lehet egyszerűen, mert hivatkozik rá később a kód több helyen, és hiba lesz emiatt. - BP
+
+
 - Ha 20 pontot elért a játékos nullázódjanak a pontjai.
   // Tipp: Ha beteszünk a Game.ts 284-es sorába egy if-et?
   // if (this.score == 20) {
   //  this.score = 0
   // }
+  
+  Igen, ezt kell csinálni. :) - BP
 
 ## Csapatmunka Javaslatok
 - Mutatkozzatok be röviden egymásnak, mielőtt kezditek a munkát.
