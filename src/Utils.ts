@@ -12,7 +12,7 @@ class Debouncer {
      * majd válaszd ki a nagyobbat az előbbi érték és a min közül.
      */
     static bound(num: number, min: number, max:number): number {
-        return Math.max( Math.min(num, max));
+        return Math.max(Math.min(num, max), min)
     };
 
     static debounce<T extends Function>(fun: T, wait: number) {
