@@ -54,8 +54,36 @@ interface IPiece {
  */
 export default class Piece implements IPiece {
   
+  next: Piece | null;
+  prev: Piece | null;
+  x: number;
+  y: number;
+  el: HTMLDivElement;
+  direction: string;
+  type: string;
+  garden: HTMLDivElement;
   
-  
+  setType(type: string): void {
+    this.type = type;
+    this.applyClass();
+  };
+
+  applyClass(): void {
+    this.el.className = '';
+    this.el.classList.add('cell', this.type, this.direction);
+  }
+
+  isCollidingWith(node: Piece | null): boolean {
+    let collided: boolean;
+    if (node == null) {
+      collided = false;
+    } else if (this.x == node.x && this.y == node.y) {
+      collided = true;
+    }
+    return collided;
+  };
+
+
   constructor({
     x,
     y,
