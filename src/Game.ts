@@ -35,9 +35,7 @@ export default class Game extends BaseGame {
      * Majd térj vissza a this.levels tömbnek ezzel az indexével.
      */
   getRandomLevel(): Level {
-    let rndNumber = Math.floor((Math.random() * 100) + 1);
-    let index = Math.floor(this.levels.length * rndNumber);
-    return this.levels[index];
+    return this.levels[Math.floor(this.levels.length * Math.random())];
   };
 
   /**
@@ -63,12 +61,8 @@ export default class Game extends BaseGame {
      * 4. a this.gridVisible értékét állítsd false -ra
      */
   removeGrid(): void {
-    const verticalGrid = Array.from(document.querySelectorAll('.vertical-grid'));
-    const horizontalGrid = Array.from(document.querySelectorAll('.horizontal-grid'));
-    const grids = [...verticalGrid, ...horizontalGrid];
-    for (let i: any = 0; i < grids.length; i += 1) {
-      Utils.removeNode(i);
-    }
+    const grids = document.querySelectorAll('.vertical-grid, .horizontal-grid');
+    grids.forEach(element => Utils.removeNode(element));
     this.gridVisible = false;
   };
 
