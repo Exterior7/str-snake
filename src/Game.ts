@@ -48,7 +48,7 @@ export default class Game extends BaseGame {
      */
   mayIHaveGoldenApple(): boolean {
     let chance = 5;
-    let pick = Math.floor((Math.random() * 100) + 1) * 100;
+    let pick = Math.random() * 100;
     return pick < chance ? true : false;
   };
 
@@ -66,7 +66,7 @@ export default class Game extends BaseGame {
     const verticalGrid = Array.from(document.querySelectorAll('.vertical-grid'));
     const horizontalGrid = Array.from(document.querySelectorAll('.horizontal-grid'));
     const grids = [...verticalGrid, ...horizontalGrid];
-    for (let i = 0; i < grids.length; i += 1) {
+    for (let i: any = 0; i < grids.length; i += 1) {
       Utils.removeNode(i);
     }
     this.gridVisible = false;
